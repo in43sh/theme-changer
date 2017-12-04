@@ -20,6 +20,8 @@ class App extends Component {
     };
 
     this.updateColor = this.updateColor.bind(this);
+    this.updateEditStatus = this.updateEditStatus.bind(this);
+
   }
 
   // updateColor
@@ -35,12 +37,17 @@ class App extends Component {
   // updateFamily
 
   // updateEditStatus
+  updateEditStatus(val) {
+    this.setState({
+      allowEdit: val
+    })
+  }
 
   render() {
     return (
       <div>
         <div className="headerBar">
-          <EditToggle />
+          <EditToggle update={this.updateEditStatus}/>
           <ColorChanger update={this.updateColor} />
           <SizeChanger />
           <FamilyChanger />
