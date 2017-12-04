@@ -21,7 +21,11 @@ class App extends Component {
   }
 
   // updateColor
-  
+  updateColor(val) {
+    this.setState({
+      fontColor: val
+    })
+  }
 
   // updateSize
 
