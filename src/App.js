@@ -18,6 +18,8 @@ class App extends Component {
       fontFamily: 'monospace',
       allowEdit: 'true'
     };
+
+    this.updateColor = this.updateColor.bind(this);
   }
 
   // updateColor
@@ -28,6 +30,7 @@ class App extends Component {
   }
 
   // updateSize
+  updateSize
 
   // updateFamily
 
@@ -37,13 +40,13 @@ class App extends Component {
     return (
       <div>
         <div className="headerBar">
-          { /* Render EditToggle */ }
-          { /* Render ColorChanger */ }
-          { /* Render SizeChanger */ }
-          { /* Render FamilyChanger */ }
+          <EditToggle />
+          <ColorChanger update={this.updateColor} />
+          <SizeChanger />
+          <FamilyChanger />
         </div>
         <div className="textArea">
-          { /* Render TextContainer */ }
+          <TextContainer fontColor={this.state.fontColor} />
         </div>
       </div>
     )
