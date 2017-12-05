@@ -21,6 +21,7 @@ class App extends Component {
 
     this.updateColor = this.updateColor.bind(this);
     this.updateEditStatus = this.updateEditStatus.bind(this);
+    this.updateSize = this.updateSize.bind(this);
 
   }
 
@@ -32,7 +33,11 @@ class App extends Component {
   }
 
   // updateSize
-  updateSize
+  updateSize(val) {
+    this.setState({
+      fontSize: val
+    })
+  }
 
   // updateFamily
 
@@ -49,7 +54,7 @@ class App extends Component {
         <div className="headerBar">
           <EditToggle update={this.updateEditStatus}/>
           <ColorChanger update={this.updateColor} />
-          <SizeChanger />
+          <SizeChanger update={this.updateSize} />
           <FamilyChanger />
         </div>
         <div className="textArea">
